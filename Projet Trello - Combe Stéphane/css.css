@@ -1,0 +1,201 @@
+
+.main{
+    z-index: 3;
+    margin-bottom: 5%;
+    margin-left: 2%;
+    margin-right: 2%;
+    max-height: 800px;
+    overflow: auto;
+white-space: nowrap;
+}
+
+.test{
+display: inline-block;
+vertical-align: top;
+
+}
+.test_space{
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.triche{
+    padding-right: 2%;
+    background-color: #EBEBEB;
+    max-height: 110px;
+    overflow: auto;
+    z-index: 2;
+}
+
+.colone .supr_button{
+    width: 100%;
+}
+
+.colonne_ajout{
+    background-color: #EBEBEB;
+    margin-top:30px;
+    margin-bottom:30px;
+    border-radius:5px;
+    box-shadow: 2px 2px 4px rgb(131, 131, 131);
+    position:relative;
+}
+
+.colone_ajout{
+    background-color: #EBEBEB;
+    border-radius:5px;
+    box-shadow: 2px 2px 4px rgb(131, 131, 131);
+    position:relative;
+}
+.colone{
+    background-color: #EBEBEB;
+    margin-top:15px;
+    margin-bottom:15px;
+    border-radius:5px;
+    box-shadow: 2px 2px 4px rgb(131, 131, 131);
+    width: 270px;
+}
+
+.bouton_modif{
+    margin-left: 15px;
+    box-shadow: 2px 2px 4px rgb(131, 131, 131);
+    border-radius:5px;
+}
+
+.button_supr{
+border:0px;
+background-color :#707070;
+float: right;
+margin-right: 10px;
+color:white;
+font-size: bold;
+}
+
+.scrollbar{
+    max-height: 590px;
+    overflow: auto;
+}
+::-webkit-scrollbar {
+    width: 0px;  /* Remove scrollbar space */
+    height: 0px;
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
+
+.add_colone{
+    background-color: #EBEBEB;
+    margin-top:15px;
+    margin-bottom:15px;
+    border-radius:2%;
+    box-shadow: 2px 2px 4px c-;
+}
+
+.colone .colone_nom{
+    background-color: #707070;
+    padding-top:10px;
+    padding-left:15px;
+    padding-bottom:5px;
+    Color:white;
+    border-radius:2%;
+    font-size: larger;
+}
+
+
+.colone .colone_corps{
+    background-color:white;
+    color:#707070;
+    border: 1px solid #707070;
+    margin: 10px;
+
+    padding: 5px;
+    border-radius:2%;
+}
+
+.colone .colone_ajout{
+    
+    padding: 5px;
+}
+
+.tache{
+    font-size:large;
+}
+.description_tache{
+    font-size:small;
+    font-style:italic;
+}
+
+.footer{
+    background-color: #CF7263; 
+    color:white; 
+    z-index:1;
+    margin-top: auto;
+}
+
+.footer_text{
+text-align:center;
+}
+
+.login{
+    background-color: #EBEBEB;
+    margin-top: 5%;
+    margin-right:30%;
+    margin-left:30%;
+    box-shadow: 2px 2px 4px rgb(131, 131, 131);
+
+    border-radius:5px;
+}
+.login .form_login{
+    margin:5px;
+    padding:5%;
+    padding-top:2%;
+}
+
+.login .titre_login{
+background-color: #707070;
+padding:15px;
+padding-bottom: 5px;
+font-size:larger;
+color:white;
+}
+
+.icon{
+    padding-right: 10px;
+}
+
+.logout a:hover{
+    text-decoration: underline;
+    color: white;
+}
+
+.fill_gris{
+background-color:707070 !important;
+font-size: larger !important;
+border-radius:7%!important;
+}
+
+a{
+    font-size: larger;
+}
+
+.pastille{
+    background-color: #ffffff;
+    margin-bottom: 10px;
+    width: 25%;
+    height: 20px;
+    border-radius: 15px;
+}
+.pastille .text_pastille{
+    text-align: center;
+    font-size:small;
+    color: #ffffff
+}
+
+.zone_affichage{
+    margin-top:15px;
+    padding: 20px;
+}
+
+.form_modif{
+    margin-left: 15px;
+    box-shadow: 2px 2px 4px rgb(131, 131, 131);
+    border-radius:5px;
+}
