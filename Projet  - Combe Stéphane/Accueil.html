@@ -1,0 +1,198 @@
+<html>
+
+<head>
+
+
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+        <link href="css.css" rel="stylesheet">
+
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+
+    <script type="text/javascript" src="laTorture.js"></script>
+</head>
+
+<body class="overflow-auto">
+
+    <nav class="navbar navbar-light sticky-top" style="background-color: #CF7263; color:white;">
+        <a class="navbar-brand"><svg width="30px" height="30px" viewBox="0 0 16 16" class="bi bi-box-seam"
+                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                    d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5l2.404.961L10.404 2l-2.218-.887zm3.564 1.426L5.596 5 8 5.961 14.154 3.5l-2.404-.961zm3.25 1.7l-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z" />
+            </svg> | InBox</a>
+
+        <div class="form-inline">
+
+
+            <svg width="45px" height="45px" viewBox="0 0 16 16" class="bi bi-person-circle icon" fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z" />
+                <path fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                <path fill-rule="evenodd" d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z" />
+            </svg>
+            <a class="logout" onclick="logOut()">Se déconnecter</a>
+
+        </div>
+    </nav>
+
+
+    <div class="row triche fixed justify-content-end">
+        <div class="col-7">
+            <div id="main_principal">
+
+            </div>
+            
+        </div>
+        
+        <div class="col-5">
+        <div>
+            <div class="zone_affichage">
+                <div class="input-group">
+                    <input type="text" class="form-control form_modif" placeholder="Ajouter une Colonne" id="ajout_titre">
+                    <div class="input-group-prepend">
+
+                        <button class="btn btn-dark btn-sm fill_gris_2" id="ajout_colone"
+                            onclick="ajout_colone()">+</button>
+
+                    </div>
+                </div>
+            </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="main" id="main">
+        <div id="colone_1" class="test">
+            <div class="test_space">
+                <div class="colone">
+
+                    <div class="colone_nom">
+
+
+                        <button class="btn btn-outline-danger btn-sm button_supr"
+                            onclick="supr_colone('colone_1')">X</button>
+
+                        <p class="colone_titre">A Faire</p>
+
+                    </div>
+
+
+                    <div class="scrollbar prout" id="contenu_1">
+                        
+                    </div>
+
+
+                    <div class="colone_ajout">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Ajouter une Tâche"
+                                aria-label="Input group example" aria-describedby="btnGroupAddon"
+                                id="ajout_description1">
+                            <div class="input-group-prepend">
+
+                                <button class="btn btn-dark my-2 my-sm-0 fill_gris" id="ajout_carte"
+                                    onclick="ajout_carte('contenu_1','ajout_description1')">+</button>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="colone_2" class="test" >
+            <div class="test_space">
+                <div class="colone">
+
+                    <div class="colone_nom">
+                        <button class="btn btn-outline-danger btn-sm button_supr"
+                            onclick="supr_colone('colone_2')">X</button>
+                        <p class="colone_titre">En Cours</p>
+                    </div>
+
+
+                    <div class="scrollbar prout" id="contenu_2">
+                        
+                        </div>
+
+
+                    <div class="colone_ajout">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Ajouter une Tâche"
+                                aria-label="Input group example" aria-describedby="btnGroupAddon"
+                                id="ajout_description2">
+                            <div class="input-group-prepend">
+
+                                <button class="btn btn-dark my-2 my-sm-0 fill_gris"
+                                    onclick="ajout_carte('contenu_2','ajout_description2')"
+                                    style="font-size:bold; border-radius:7%">+</button>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="colone_3" class="test">
+            <div class="test_space">
+                <div class="colone">
+                    <div class="colone_nom">
+                        <button class="btn btn-outline-danger btn-sm button_supr"
+                            onclick="supr_colone('colone_3')">X</button>
+                        <p class="colone_titre">Vérifier</p>
+                    </div>
+
+
+                    <div class="scrollbar prout" id="contenu_3">
+                        
+                        
+                        
+                    </div>
+
+                    <div class="colone_ajout">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Ajouter une Tâche"
+                                aria-label="Input group example" aria-describedby="btnGroupAddon"
+                                id="ajout_description3">
+                            <div class="input-group-prepend">
+
+                                <button class="btn btn-dark my-2 my-sm-0 fill_gris"
+                                    onclick="ajout_carte('contenu_3','ajout_description3')"
+                                    style="font-size:bold; border-radius:7%">+</button>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <nav class="navbar footer fixed-bottom justify-content-center">
+
+
+        <br />
+
+        <p class="footer_text">Combe Stéphane - Copyright 2020<br>Licence Pro MDN</p>
+
+
+    </nav>
+
+
+
+</body>
+
+</html>
