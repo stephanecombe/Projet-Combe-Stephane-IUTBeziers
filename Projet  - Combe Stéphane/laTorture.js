@@ -137,6 +137,8 @@ function log() {
             var text_button = document.createTextNode('+');
             var text_button_supr = document.createTextNode('X');
 
+
+
             newcol.id = "colone_" + nbClick;
             newcol.className = "test";
             col.className = "test_space";
@@ -152,6 +154,7 @@ function log() {
             newinput2.className = "input-group-prepend";
             newbutton.className = "btn btn-dark my-2 my-sm-0 fill_gris";
             newinput.placeholder = "Ajouter une Tâche";
+            newtitre.contentEditable = "true";
 
             new_button_supr.className = "btn btn-outline-danger btn-sm button_supr";
 
@@ -240,6 +243,12 @@ function log() {
         var button_modif = document.createElement('button');
         var text_button = document.createTextNode("Modifier");
 
+        var new_button_supr = document.createElement('button');
+        var text_button_supr = document.createTextNode('X');
+
+        new_button_supr.className = "btn btn-outline-danger btn-sm button_supr";
+        new_button_supr.addEventListener("click", function () { supr_colone("non") }, false);
+
         zone_titre.className = 'alert_titre';
         champ_titre.className = 'colone_titre';
 
@@ -259,9 +268,11 @@ function log() {
         button_modif.className = 'btn btn-info';
         button_modif.addEventListener("click", function () { remplacement_carte(titre_card, description_card, input1.id, input2.id) }, false);
 
+        new_button_supr.appendChild(text_button_supr);
+        zone_titre.appendChild(new_button_supr);
         text_titre.appendChild(champ_titre);
         zone_titre.appendChild(text_titre);
-
+        
         label1.appendChild(label1_text);
         form_group1.appendChild(label1);
         form_group1.appendChild(input1);
@@ -310,6 +321,12 @@ function log() {
         var button_modif = document.createElement('button');
         var text_button = document.createTextNode("Envoyer");
 
+        var new_button_supr = document.createElement('button');
+        var text_button_supr = document.createTextNode('X');
+        
+        new_button_supr.className = "btn btn-outline-danger btn-sm button_supr";
+        new_button_supr.addEventListener("click", function () { supr_colone("non") }, false);
+
         zone_titre.className = 'alert_titre';
         champ_titre.className = 'colone_titre';
 
@@ -326,6 +343,8 @@ function log() {
         button_modif.className = 'btn btn-info';
         button_modif.addEventListener("click", function () { ajout_colone(label2.id) }, false);
 
+        new_button_supr.appendChild(text_button_supr);
+        zone_titre.appendChild(new_button_supr);
         text_titre.appendChild(champ_titre);
         zone_titre.appendChild(text_titre);
 
