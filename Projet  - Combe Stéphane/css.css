@@ -1,11 +1,41 @@
+#oui{
+    z-index: 1;
+    width: 100%;
+    position: absolute;
+    vertical-align: top;
+}
+#non{
+    z-index: 2;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #EBEBEBCC;
+    padding: 10% 30% 10% 30%;
+    visibility: hidden; 
+}
 
+.alert_titre{
+    color:white;
+    font-size: larger;
+    width: 100%;
+    border: 1px solid #707070;
+    box-shadow: 2px 2px 4px rgb(131, 131, 131);
+    padding: 10px;
+    background-color: #707070;
+}
+.alert_contenu{
+    width: 100%;
+    box-shadow: 2px 2px 4px rgb(131, 131, 131);
+    border-radius: 0px 0px 5px 5px ;
+    background-color: #EBEBEB;
+    padding: 5% 10% 5% 10%;
+}
 .main{
-    z-index: 3;
     margin-bottom: 5%;
     margin-left: 2%;
     margin-right: 2%;
     overflow: auto;
-white-space: nowrap;
+    white-space: nowrap;
 }
 
 .test{
@@ -19,27 +49,21 @@ vertical-align: top;
 }
 
 .triche{
-    padding-right: 1%;
-    background-color: #EBEBEB;
-/*
-    max-height: 110px;
-    overflow: auto;
-*/
+    text-align: center;
+    z-index: 2;
+    margin-bottom: 100px;
+    margin-left: 3%;
+    margin-right:3%;
+}
+.triche hr{
+    width: 100%;
 }
 
 .colone .supr_button{
     width: 100%;
 }
 
-.colonne_ajout{
-    
-    margin-top:30px;
-    margin-bottom:30px;
-    border-radius:5px;
-    box-shadow: 2px 2px 4px rgb(131, 131, 131);
-    position:relative;
-    height: 2%;
-}
+
 
 .colone_ajout{
     
@@ -53,7 +77,6 @@ vertical-align: top;
     margin-bottom:15px;
     border-radius:5px;
     box-shadow: 2px 2px 4px rgb(131, 131, 131);
-    
 }
 
 .bouton_modif{
@@ -74,10 +97,11 @@ font-size: bold;
 
 .scrollbar{
     overflow: auto;
+    padding-bottom: 3px;
 }
+
 ::-webkit-scrollbar {
     width: 0px;  /* Remove scrollbar space */
-    height: 0px;
     background: transparent;  /* Optional: just make scrollbar invisible */
 }
 
@@ -90,21 +114,21 @@ font-size: bold;
     box-shadow: 2px 2px 4px c-;
 }
 
-.colone .colone_nom{
+.colone_nom{
     background-color: #707070;
     padding-top:10px;
     padding-left:15px;
     padding-bottom:5px;
     Color:white;
-    border-radius:2%;
+   
     font-size: larger;
 }
 
 
-.colone .colone_corps{
+.colone_corps{
     background-color:white;
     color:#707070;
-    border: 1px solid #707070;
+    border: 2px solid #707070;
     margin: 10px;
     padding: 5px;
     border-radius:2%;
@@ -126,6 +150,7 @@ font-size: bold;
 .footer{
     background-color: #CF7263; 
     color:white;
+    z-index: 1;
     
 }
 
@@ -167,14 +192,15 @@ color:white;
 
 .fill_gris{
 background-color:707070 !important;
-font-size: larger !important;
+
 border-radius:7%!important;
 }
-
 .fill_gris_2{
-    background-color:707070 !important;
-    border-radius:7%!important;
-    width: 35px;
+    background-color:#707070 !important;
+    border-radius:5px !important;
+    border-color: #707070;
+    padding-left: 15px;
+    padding-right: 15px;
     }
 
 a{
@@ -230,9 +256,10 @@ a{
     padding: 0.4em;
 }
 .portlet-placeholder {
-    border: 1px dotted black;
-    margin: 0 1em 1em 0;
-    height: 50px;
+    border: 1px dashed #707070;
+    margin: 10px;
+    height: 130px;
+
 }
 
   /* Responsive */
@@ -267,7 +294,7 @@ a{
 @media only screen and (max-height:1024px)
 {
     .scrollbar{
-        max-height: 56%;
+        max-height:580px;
         
     }
 }
@@ -275,12 +302,15 @@ a{
 @media only screen and (max-height:899px)
 {
     .scrollbar{
-        max-height: 62%;
+        max-height: 520px;
         
     }
     .footer{
         visibility: hidden;
      }
+     .triche{  
+        margin-bottom: 20px;
+    }
     }
 
 
@@ -288,20 +318,27 @@ a{
 @media only screen and (max-height:799px)
 {
     .scrollbar{
-        max-height: 54%;
+        max-height: 420px;
         
     }
     .footer{
         visibility: hidden;
      }
+     .triche{  
+        margin-bottom: 20px;
+    }
 }
 @media only screen and (max-height:699px)
 {
     .scrollbar{
-        max-height: 54%;
+        max-height: 350px;
         
     }
     .footer{
         visibility: hidden;
      }
+     .triche{  
+        margin-bottom: 20px;
+    }
 }
+
