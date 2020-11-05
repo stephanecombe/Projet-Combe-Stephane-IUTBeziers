@@ -95,6 +95,13 @@ margin-right: 10px;
 color:white;
 font-size: bold;
 }
+.button_supr2{
+    border:0px;
+    background-color :#707070;
+    float: right;
+    color:white;
+    font-size: bold;
+    }
 
 .scrollbar{
     overflow: auto;
@@ -103,7 +110,7 @@ font-size: bold;
 
 ::-webkit-scrollbar {
     width: 0px;  /* Remove scrollbar space */
-    background: transparent;  /* Optional: just make scrollbar invisible */
+      /* Optional: just make scrollbar invisible */
 }
 
 

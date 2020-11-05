@@ -21,7 +21,7 @@ function log() {
 
     var modif = 1;
 
-
+drog();
 
     function ajout_carte(id_contenu, id_input) {
 
@@ -104,6 +104,7 @@ function log() {
         document.getElementById(id_input).value = '';
         nb_task++;
         drag();
+        drog();
         document.getElementById(id_input).style.borderColor = '';
         }
         else{
@@ -137,14 +138,16 @@ function log() {
             var text_button = document.createTextNode('+');
             var text_button_supr = document.createTextNode('X');
 
-
+            var button_modif = document.createElement('button');
+            var text_button_modif = document.createTextNode('Modif');
 
             newcol.id = "colone_" + nbClick;
-            newcol.className = "test";
+            newcol.className = "test contenant";
             col.className = "test_space";
             newcolone.className = "colone";
-            newcolone_nom.className = "colone_nom";
+            newcolone_nom.className = "colone_nom contenant-header";
             newtitre.className = "colone_titre";
+            newtitre.id = "colone_titre"+nbClick;
             newcontenu.className = "scrollbar prout ui-sortable";
             newcontenu.id = "contenu_" + nbClick;
             newajout_carte.className = "colone_ajout";
@@ -154,14 +157,15 @@ function log() {
             newinput2.className = "input-group-prepend";
             newbutton.className = "btn btn-dark my-2 my-sm-0 fill_gris";
             newinput.placeholder = "Ajouter une Tâche";
-            newtitre.contentEditable = "true";
 
+            button_modif.className = "btn btn-outline-info btn-sm button_supr2";
             new_button_supr.className = "btn btn-outline-danger btn-sm button_supr";
 
             newbutton.addEventListener("click", function () { ajout_carte(newcontenu.id, newinput.id) }, false);
             new_button_supr.addEventListener("click", function () { supr_colone(newcol.id) }, false);
+            button_modif.addEventListener("click", function () { popup_emplacement_colone(newtitre.id) }, false);
 
-
+            button_modif.appendChild(text_button_modif); 
             newinput2.appendChild(newbutton);
             newinput_group.appendChild(newinput2);
             newajout_carte.appendChild(newinput_group);
@@ -170,6 +174,7 @@ function log() {
 
             new_button_supr.appendChild(text_button_supr);
             newcolone_nom.appendChild(new_button_supr);
+            newcolone_nom.appendChild(button_modif);
             newtitre.appendChild(titre);
             newcolone_nom.appendChild(newtitre);
             newcolone.appendChild(newcolone_nom);
@@ -189,6 +194,7 @@ function log() {
             placement.appendChild(newcol);
             nbClick++;
             drag();
+            drog();
         }
         else {
             document.getElementById("colonne_input").style.borderColor = ' #CF7263';
@@ -303,7 +309,7 @@ function log() {
         var reception = document.createElement('div');
         var zone_titre = document.createElement('div');
         var text_titre = document.createElement('p');
-        var champ_titre = document.createTextNode('Colonne Ajout');
+        var champ_titre = document.createTextNode('Ajout Colonne');
 
         var zone_contenu = document.createElement('div');
 
@@ -368,6 +374,94 @@ function log() {
         var placement = document.getElementById("non");
         placement.appendChild(reception);
 
+    }
+    function popup_emplacement_colone(ancien_titre) {
+
+        document.getElementById("non").style.visibility = "visible";
+
+        var reception = document.createElement('div');
+        var zone_titre = document.createElement('div');
+        var text_titre = document.createElement('p');
+        var champ_titre = document.createTextNode('Modification Colonne');
+
+        var zone_contenu = document.createElement('div');
+
+        var form_login = document.createElement('div');
+
+        var form_group1 = document.createElement('div');
+        var label1 = document.createElement('h6');
+        var label1_text = document.createTextNode('Veuillez mettre un nom à votre colonne');
+
+
+        var form_group2 = document.createElement('div');
+        var label2 = document.createElement('input');
+
+
+        var button_modif = document.createElement('button');
+        var text_button = document.createTextNode("Modifier");
+
+        var new_button_supr = document.createElement('button');
+        var text_button_supr = document.createTextNode('X');
+        
+        new_button_supr.className = "btn btn-outline-danger btn-sm button_supr";
+        new_button_supr.addEventListener("click", function () { supr_colone("non") }, false);
+
+        zone_titre.className = 'alert_titre';
+        champ_titre.className = 'colone_titre';
+
+        zone_contenu.className = 'alert_contenu';
+        form_login.className = 'form_login';
+
+        form_group1.className = 'form-group';
+
+        form_group2.className = 'form-group';
+        label2.className = "form-control";
+        label2.id = "colonne_input"
+        label2.placeholder = "Nom de la colonne";
+
+        button_modif.className = 'btn btn-info';
+        button_modif.addEventListener("click", function () { remplacement_colone(label2.id,ancien_titre) }, false);
+
+        new_button_supr.appendChild(text_button_supr);
+        zone_titre.appendChild(new_button_supr);
+        text_titre.appendChild(champ_titre);
+        zone_titre.appendChild(text_titre);
+
+        label1.appendChild(label1_text);
+        form_group1.appendChild(label1);
+
+        form_login.appendChild(form_group1);
+
+        form_group2.appendChild(label2);
+
+        form_login.appendChild(form_group2);
+
+        button_modif.appendChild(text_button);
+        form_login.appendChild(button_modif);
+
+        zone_contenu.appendChild(form_login);
+
+        reception.appendChild(zone_titre);
+        reception.appendChild(zone_contenu);
+
+        var placement = document.getElementById("non");
+        placement.appendChild(reception);
+
+    }
+
+    function remplacement_colone(label_2,id_description){
+        if (document.getElementById(label_2).value !== '') {
+            document.getElementById(id_description).textContent = document.getElementById(label_2).value;
+
+            var element = document.getElementById("non");
+            while (element.firstChild) {
+                element.removeChild(element.firstChild);
+            }
+            document.getElementById("non").style.visibility = "hidden";
+        }
+        else {
+            document.getElementById(label_2).style.borderColor = ' #CF7263';
+        }
     }
 
     function remplacement_carte(id_titre, id_description, label_1, label_2) {
@@ -462,5 +556,26 @@ function log() {
             var icon = $(this);
             icon.toggleClass("ui-icon-minusthick ui-icon-plusthick");
             icon.closest(".portlet").find(".portlet-content").toggle();
+        });
+    }
+
+    function drog() {
+        $(".content").sortable({
+            connectWith: ".content",
+            handle: ".contenant-header",
+            cancel: ".portlet-toggle",
+            placeholder: "portlet-placeholder ui-corner-all"
+        });
+
+        $(".contenant")
+            .addClass("ui-widget ui-widget-content ui-helper-clearfix ui-corner-all")
+            .find(".contenant-header")
+            .addClass("ui-widget-header ui-corner-all")
+
+
+        $(".portlet-toggle").click(function () {
+            var icon = $(this);
+            icon.toggleClass("ui-icon-minusthick ui-icon-plusthick");
+            icon.closest(".contenant").find(".portlet-content").toggle();
         });
     }

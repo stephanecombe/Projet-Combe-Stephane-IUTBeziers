@@ -44,17 +44,18 @@
                 <button class="btn btn-dark btn-lg fill_gris_2" id="ajout_colone" onclick="popup()">Ajout Colonne</button>
             
         </div>
-        <div class="main" id="main">
-            <div id="colone_1" class="test">
+        <div class="main content" id="main">
+            <div id="colone_1" class="test contenant">
                 <div class="test_space">
                     <div class="colone">
 
-                        <div class="colone_nom">
+                        <div class="colone_nom  contenant-header">
 
                             <button class="btn btn-outline-danger btn-sm button_supr"
                                 onclick="supr_colone('colone_1')">X</button>
-
-                            <p class="colone_titre" contenteditable="true">A Faire</p>
+                                <button class="btn btn-outline-info btn-sm button_supr2"
+                                onclick="popup_emplacement_colone('colone_titre1')">Modif</button>
+                            <p class="colone_titre" id="colone_titre1" >A Faire</p>
 
                         </div>
 
@@ -82,14 +83,16 @@
                 </div>
             </div>
 
-            <div id="colone_2" class="test">
+            <div id="colone_2" class="test contenant">
                 <div class="test_space">
                     <div class="colone">
 
-                        <div class="colone_nom">
+                        <div class="colone_nom contenant-header">
                             <button class="btn btn-outline-danger btn-sm button_supr"
                                 onclick="supr_colone('colone_2')">X</button>
-                            <p class="colone_titre" contenteditable="true">En Cours</p>
+                                <button class="btn btn-outline-info btn-sm button_supr2"
+                                onclick="popup_emplacement_colone('colone_titre2')">Modif</button>
+                            <p class="colone_titre" id="colone_titre2" >En Cours</p>
                         </div>
 
 
@@ -117,13 +120,15 @@
                 </div>
             </div>
 
-            <div id="colone_3" class="test">
+            <div id="colone_3" class="test contenant">
                 <div class="test_space">
                     <div class="colone">
-                        <div class="colone_nom">
+                        <div class="colone_nom contenant-header">
                             <button class="btn btn-outline-danger btn-sm button_supr"
                                 onclick="supr_colone('colone_3')">X</button>
-                            <p class="colone_titre" contenteditable="true">Vérifier</p>
+                                <button class="btn btn-outline-info btn-sm button_supr2"
+                                onclick="popup_emplacement_colone('colone_titre3')">Modif</button>
+                            <p class="colone_titre" id="colone_titre3" >Vérifier</p>
                         </div>
 
 
